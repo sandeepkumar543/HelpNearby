@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find trusted local services, hire verified neighborhood workers, or get free community help with HelpNearby.">
+  <title>HelpNearby | Trusted Local Services & Neighborhood Support</title>
+  
+  <!-- REAL BRAND FAVICON -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230d9488'/%3E%3Cstop offset='100%25' stop-color='%2310b981'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='14' fill='url(%23g)'/%3E%3Cpath d='M14 23L24 14L34 23' stroke='%23fff' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M19 23V31C19 32.6569 20.3431 34 22 34H26C27.6569 34 29 32.6569 29 31V23' stroke='%23fff' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='3.2' fill='%23f59e0b'/%3E%3C/svg%3E">
+  
+  <!-- MODERN FONTS: Plus Jakarta Sans (Headings) & Inter (UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="top-announcement">
+    <div class="announcement-content">
+      <span class="badge-live-pulse"></span>
+      <span><strong>Hyperlocal Network:</strong> Over 1,400+ background-verified professionals ready in Phagwara, Jalandhar & Ludhiana.</span>
+      <span class="announcement-link" data-page="community">100% Free Community Assistance Available →</span>
+    </div>
+  </div>
+
+  <!-- MODERN NAVBAR -->
+  <header class="navbar">
+    <a href="#" class="brand" data-page="home">
+      <!-- REAL BRAND SVG LOGO -->
+      <svg class="brand-logo-svg" width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0f766e" />
+            <stop offset="50%" stop-color="#0d9488" />
+            <stop offset="100%" stop-color="#10b981" />
+          </linearGradient>
+          <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f59e0b" />
+            <stop offset="100%" stop-color="#ea580c" />
+          </linearGradient>
+        </defs>
+        <rect width="48" height="48" rx="13" fill="url(#logoGrad)" />
+        <path d="M13 24L24 14L35 24" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M18 24V32C18 33.65 19.35 35 21 35H27C28.65 35 30 33.65 30 32V24" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+        <circle cx="24" cy="27" r="3.2" fill="url(#heartGrad)" />
+        <circle cx="36" cy="13" r="2.2" fill="#fef08a" />
+      </svg>
+      <div class="brand-text-block">
+        <span class="brand-name">Help<span class="brand-highlight">Nearby</span></span>
+        <span class="brand-tagline">TRUSTED LOCAL NETWORK</span>
+      </div>
+    </a>
+
+    <!-- LOCATION SELECTOR IN NAVBAR -->
+    <div class="nav-location-pill" id="navLocationBtn">
+      <span class="loc-pin">📍</span>
+      <span class="loc-text" id="navLocationText">Punjab, India</span>
+      <span class="loc-arrow">▾</span>
+    </div>
+
+    <nav class="nav-links">
+      <button class="nav-link active" data-page="home">
+        <span>Home</span>
+      </button>
+      <button class="nav-link" data-page="workers">
+        <span>Find Pros</span>
+      </button>
+      <button class="nav-link" data-page="jobs">
+        <span>Browse Jobs</span>
+      </button>
+      <button class="nav-link nav-link-community" data-page="community">
+        <span>Free Help</span>
+        <span class="nav-pill-badge">Volunteer</span>
+      </button>
+      <button class="nav-link" data-page="bookings">
+        <span>My Activity</span>
+      </button>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn btn-outline" id="profileBtn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>Join as Pro</span>
+      </button>
+      <button class="btn btn-primary" id="postJobNav">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        <span>Post a Request</span>
+      </button>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+  </header>
+
+  <main>
+
+    <!-- ==================== HOME PAGE ==================== -->
+    <section class="page active" id="home">
+
+      <!-- HERO SECTION -->
+      <div class="hero">
+        <div class="hero-content">
+          <div class="hero-badge-trust">
+            <span class="pulse-dot"></span>
+            <span>HYPERLOCAL · DIRECT BOOKINGS · 100% TRANSPARENT</span>
+          </div>
+
+          <h1 class="hero-headline">
+            Skilled local hands,<br>
+            <span class="gradient-text">right in your street.</span>
+          </h1>
+
+          <p class="hero-subtext">
+            Connect with verified electricians, plumbers, carpenters, deep cleaners and gardeners nearby — or request and give free community support.
+          </p>
+
+          <!-- HERO INTERACTIVE SEARCH BAR -->
+          <div class="hero-search-card">
+            <div class="search-input-wrapper">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="heroSearchInput" placeholder="What service do you need? (e.g. Electrician, Tap Repair, Cleaning)...">
+            </div>
+            <div class="search-divider"></div>
+            <div class="search-location-wrapper">
+              <span class="search-loc-icon">📍</span>
+              <select id="heroLocationSelect">
+                <option value="">All Locations</option>
+                <option value="Phagwara">Phagwara</option>
+                <option value="Jalandhar">Jalandhar</option>
+                <option value="Ludhiana">Ludhiana</option>
+              </select>
+            </div>
+            <button class="btn btn-primary hero-search-btn" id="heroSearchBtn">
+              <span>Find Help</span>
+              <span class="arrow-icon">→</span>
+            </button>
+          </div>
+
+          <!-- POPULAR CATEGORY PILLS -->
+          <div class="hero-quick-tags">
+            <span class="quick-tags-title">Popular:</span>
+            <button class="quick-tag" data-tag="Electrical">⚡ Electrician</button>
+            <button class="quick-tag" data-tag="Plumbing">🔧 Plumber</button>
+            <button class="quick-tag" data-tag="Cleaning">✨ Deep Cleaning</button>
+            <button class="quick-tag" data-tag="Carpentry">🪚 Carpenter</button>
+            <button class="quick-tag" data-tag="Gardening">🌱 Gardening</button>
+          </div>
+
+          <div class="hero-actions-alt">
+            <button class="btn btn-outline" id="heroPostBtn">
+              <span>📝 Post a Custom Task</span>
+            </button>
+            <button class="btn btn-ghost" data-page="community">
+              <span>❤️ Browse Community Volunteer Tasks →</span>
+            </button>
+          </div>
+
+          <div class="hero-trust-row">
+            <div class="trust-badge-item">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="#0d9488"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Verified IDs</span>
+            </div>
+            <div class="trust-badge-item">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="#0d9488"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Direct Fair Pricing</span>
+            </div>
+            <div class="trust-badge-item">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="#0d9488"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <span>Zero-Commission Free Help</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- HERO REAL VISUAL COMPOSITION -->
+        <div class="hero-visual-wrapper">
+          <div class="hero-visual-card">
+            <!-- REAL HIGH RES HERO PHOTO -->
+            <div class="hero-photo-frame">
+              <img 
+                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" 
+                alt="Verified local service professional" 
+                class="hero-main-img"
+              >
+              <div class="hero-photo-gradient"></div>
+            </div>
+
+            <!-- FLOATING WORKER PREVIEW BADGE -->
+            <div class="floating-badge floating-pro">
+              <img 
+                src="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?auto=format&fit=crop&w=140&q=80" 
+                alt="Amit Sharma Electrician" 
+                class="floating-pro-avatar"
+              >
+              <div class="floating-pro-meta">
+                <div class="floating-pro-header">
+                  <strong>Amit Sharma</strong>
+                  <span class="badge-verified-check" title="Verified Background">✓</span>
+                </div>
+                <span class="floating-pro-skill">Master Electrician · Phagwara</span>
+                <div class="floating-pro-stars">
+                  <span class="star-rating">★★★★★</span>
+                  <span class="rating-num">4.9</span>
+                  <span class="reviews-count">(84 reviews)</span>
+                </div>
+              </div>
+              <span class="status-badge-live">Online</span>
+            </div>
+
+            <!-- FLOATING RESPONSE TIME BADGE -->
+            <div class="floating-badge floating-time">
+              <div class="time-badge-icon">⚡</div>
+              <div>
+                <strong>~15 mins</strong>
+                <small>Average response</small>
+              </div>
+            </div>
+
+            <!-- FLOATING NEIGHBOR TRUST BADGE -->
+            <div class="floating-badge floating-trust">
+              <div class="avatar-stack">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" alt="Pro">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=80&q=80" alt="Pro">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt="Pro">
+              </div>
+              <div class="trust-text">
+                <strong>1,400+ Pros</strong>
+                <small>Ready in Punjab</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATS COUNTER BAR -->
+      <section class="stats-counter-bar">
+        <div class="stat-box">
+          <div class="stat-number">15,000+</div>
+          <div class="stat-title">Neighbors Helped</div>
+          <p class="stat-sub">Across 12 cities & localities</p>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat-box">
+          <div class="stat-number">4.9 ★</div>
+          <div class="stat-title">Average Service Rating</div>
+          <p class="stat-sub">From 3,400+ authentic reviews</p>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat-box">
+          <div class="stat-number">99.2%</div>
+          <div class="stat-title">Verified Task Completion</div>
+          <p class="stat-sub">Guaranteed honest workmanship</p>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat-box">
+          <div class="stat-number">₹0</div>
+          <div class="stat-title">Fee on Community Help</div>
+          <p class="stat-sub">Pure neighbor-to-neighbor solidarity</p>
+        </div>
+      </section>
+
+      <!-- THREE ACTION PATHWAYS -->
+      <section class="section pathways-section">
+        <div class="section-heading text-center">
+          <span class="eyebrow">CHOOSE YOUR PATHWAY</span>
+          <h2>How would you like to use HelpNearby today?</h2>
+          <p>Whether you need reliable home assistance, want to earn with your skills, or wish to lend a free hand.</p>
+        </div>
+
+        <div class="action-grid">
+          <article class="action-card action-card-hire">
+            <div class="action-card-top">
+              <div class="action-icon-modern hire-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+              <span class="card-chip">For Residents</span>
+            </div>
+            <h3>I need help with a task</h3>
+            <p>Post a job with your budget or browse verified local electricians, plumbers, painters, and cleaners ready to help.</p>
+            <button class="text-button" id="needHelpBtn">
+              <span>Post a request</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </article>
+
+          <article class="action-card action-card-work">
+            <div class="action-card-top">
+              <div class="action-icon-modern work-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <span class="card-chip pro-chip">For Professionals</span>
+            </div>
+            <h3>I'm looking for local work</h3>
+            <p>Explore jobs posted by residents in your area, showcase your experience, set your starting rate, and grow your local client base.</p>
+            <button class="text-button" data-page="jobs">
+              <span>Explore open jobs</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </article>
+
+          <article class="action-card action-card-community">
+            <div class="action-card-top">
+              <div class="action-icon-modern community-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <span class="card-chip volunteer-chip">Community Care</span>
+            </div>
+            <h3>I want to give back</h3>
+            <p>Support an elderly neighbor with medicine pickup, help carry groceries, or assist students — 100% voluntary and goodwill.</p>
+            <button class="text-button" data-page="community">
+              <span>View free requests</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <!-- REAL PHOTO CATEGORIES SECTION -->
+      <section class="section soft-section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">POPULAR SERVICES</span>
+            <h2>Explore services by category</h2>
+            <p>High-demand neighborhood home maintenance and repairs.</p>
+          </div>
+          <button class="btn btn-outline" data-page="workers">View All Categories →</button>
+        </div>
+        
+        <!-- DYNAMIC PHOTO CATEGORY GRID -->
+        <div class="category-grid" id="homeCategories"></div>
+      </section>
+
+      <!-- FEATURED REAL PROS SECTION -->
+      <section class="section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">TOP-RATED LOCAL PROFESSIONALS</span>
+            <h2>Verified workers in your area</h2>
+            <p>Independently verified, background-checked pros with transparent customer reviews.</p>
+          </div>
+          <button class="btn btn-outline" data-page="workers">Browse All Pros →</button>
+        </div>
+        
+        <!-- WORKER CARDS GRID -->
+        <div class="worker-grid" id="homeWorkers"></div>
+      </section>
+
+      <!-- HOW IT WORKS SECTION -->
+      <section class="section how-it-works-section">
+        <div class="section-heading text-center">
+          <span class="eyebrow">SIMPLE & TRANSPARENT</span>
+          <h2>How HelpNearby works in 3 easy steps</h2>
+          <p>No middlemen, no hidden booking charges, direct communication.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <div class="step-icon">📋</div>
+            <h3>Post or Browse</h3>
+            <p>Choose a verified local pro from our directory or post your custom task with your timeline and budget.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <div class="step-icon">💬</div>
+            <h3>Connect Directly</h3>
+            <p>Check genuine reviews, view past work, agree on clear expectations, and connect directly with your neighbor.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <div class="step-icon">🤝</div>
+            <h3>Job Done with Ease</h3>
+            <p>Get quality work completed at your doorstep. For community help, enjoy the warmth of a neighborly gesture.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMMUNITY CARE BANNER -->
+      <section class="section community-banner-modern">
+        <div class="community-banner-content">
+          <div class="community-badge-pill">❤️ COMMUNITY SOLIDARITY</div>
+          <h2>Not every good deed needs a price tag.</h2>
+          <p>
+            HelpNearby connects elderly residents, students, and neighbors in temporary difficulty with kind volunteers ready to lend a helping hand for free.
+          </p>
+          <div class="community-banner-actions">
+            <button class="btn btn-light" data-page="community">Browse Free Requests</button>
+            <button class="btn btn-outline-white" id="communityBannerPostBtn">Ask for Community Help</button>
+          </div>
+        </div>
+        <div class="community-banner-illustration">
+          <img 
+            src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=700&q=80" 
+            alt="Community assistance and volunteer support" 
+            class="community-banner-photo"
+          >
+        </div>
+      </section>
+
+      <!-- REAL TESTIMONIALS SECTION -->
+      <section class="section testimonials-section">
+        <div class="section-heading text-center">
+          <span class="eyebrow">NEIGHBORHOOD REVIEWS</span>
+          <h2>What people in your city are saying</h2>
+          <p>Real experiences from local residents and service providers.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "When our kitchen power supply tripped right before dinner, Amit arrived within 20 minutes. He quickly found the burnt fuse and fixed it for a very honest fee. Lifesaver!"
+            </p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" alt="Rajesh Khanna">
+              <div>
+                <strong>Rajesh Khanna</strong>
+                <small>Model Town, Phagwara · Hired Electrician</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Neha and her team did an immaculate deep clean of our 3-BHK house before a family wedding. Every corner was spotless and fresh. Highly professional and polite."
+            </p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Simran Kaur">
+              <div>
+                <strong>Simran Kaur</strong>
+                <small>Civil Lines, Jalandhar · Hired Deep Cleaning</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              "I posted a free community request for grocery pickup for my elderly mother while I was traveling. A young local neighbor helped her within two hours. This platform builds real trust."
+            </p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=100&q=80" alt="Karan Johal">
+              <div>
+                <strong>Karan Johal</strong>
+                <small>Urban Estate, Ludhiana · Community Request</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRUST & SAFETY HIGHLIGHTS -->
+      <section class="section trust-guarantee-section">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <div class="trust-icon">🛡️</div>
+            <h4>Identity Verified</h4>
+            <p>Every service provider undergoes phone and government ID verification.</p>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">💰</div>
+            <h4>No Hidden Fees</h4>
+            <p>Transparent quotes agreed between you and the pro before work begins.</p>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">⭐</div>
+            <h4>Genuine Reviews</h4>
+            <p>Ratings can only be submitted after verified completed tasks.</p>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">🤝</div>
+            <h4>100% Free Community Aid</h4>
+            <p>Zero platform charge on neighborly goodwill and volunteer help.</p>
+          </div>
+        </div>
+      </section>
+
+    </section>
+
+    <!-- ==================== WORKERS DIRECTORY PAGE ==================== -->
+    <section class="page" id="workers">
+      <div class="page-heading">
+        <span class="eyebrow">LOCAL SERVICE DIRECTORY</span>
+        <h1>Find Verified Local Pros</h1>
+        <p>Discover skilled tradespeople and home service specialists in your neighborhood.</p>
+      </div>
+
+      <!-- FILTER PANEL -->
+      <div class="filter-panel-modern">
+        <div class="filter-field">
+          <label for="workerSearch">Search by Skill or Name</label>
+          <div class="filter-input-wrap">
+            <span class="f-icon">🔍</span>
+            <input id="workerSearch" placeholder="e.g. Electrician, Plumbing, Amit...">
+          </div>
+        </div>
+        <div class="filter-field">
+          <label for="workerLocation">City / Neighborhood</label>
+          <div class="filter-input-wrap">
+            <span class="f-icon">📍</span>
+            <input id="workerLocation" placeholder="e.g. Phagwara, Jalandhar...">
+          </div>
+        </div>
+        <div class="filter-field">
+          <label for="workerCategory">Category</label>
+          <div class="filter-input-wrap">
+            <span class="f-icon">🏷️</span>
+            <select id="workerCategory">
+              <option value="">All Categories</option>
+            </select>
+          </div>
+        </div>
+        <div class="filter-field">
+          <label for="workerSort">Sort By</label>
+          <div class="filter-input-wrap">
+            <span class="f-icon">⚡</span>
+            <select id="workerSort">
+              <option value="rating">Highest Rated</option>
+              <option value="jobs">Most Experienced</option>
+              <option value="priceAsc">Rate: Low to High</option>
+              <option value="priceDesc">Rate: High to Low</option>
+            </select>
+          </div>
+        </div>
+        <div class="filter-field filter-btn-col">
+          <button class="btn btn-primary filter-button" id="workerFilterBtn">Apply Filters</button>
+        </div>
+      </div>
+
+      <!-- QUICK AREA SHORTCUTS -->
+      <div class="area-shortcuts">
+        <span class="shortcut-label">Quick Locations:</span>
+        <button class="area-pill" data-area="">All Areas</button>
+        <button class="area-pill" data-area="Phagwara">Phagwara</button>
+        <button class="area-pill" data-area="Jalandhar">Jalandhar</button>
+        <button class="area-pill" data-area="Ludhiana">Ludhiana</button>
+      </div>
+
+      <div class="result-heading">
+        <div>
+          <h2>Available Professionals</h2>
+          <p>Click on any profile to see reviews, detailed services, and direct booking options.</p>
+        </div>
+        <span class="result-count-badge" id="workerCount"></span>
+      </div>
+
+      <div class="worker-grid" id="allWorkers"></div>
+
+      <div class="empty-state hidden" id="workerEmpty">
+        <div class="empty-icon">🔎</div>
+        <h3>No matching workers found</h3>
+        <p>Try clearing your filters or searching for a different skill or locality.</p>
+        <button class="btn btn-outline" id="resetWorkerFiltersBtn">Clear All Filters</button>
+      </div>
+    </section>
+
+    <!-- ==================== JOBS DIRECTORY PAGE ==================== -->
+    <section class="page" id="jobs">
+      <div class="page-heading">
+        <div class="heading-flex">
+          <div>
+            <span class="eyebrow">WORK OPPORTUNITIES</span>
+            <h1>Explore Local Jobs</h1>
+            <p>Connect with residents seeking skilled assistance and earn with your craft.</p>
+          </div>
+          <button class="btn btn-primary" id="jobsPostBtn">+ Post a Job</button>
+        </div>
+      </div>
+
+      <div class="filter-panel-modern">
+        <div class="filter-field">
+          <label for="jobSearch">Search Jobs</label>
+          <div class="filter-input-wrap">
+            <span class="f-icon">🔍</span>
+            <input id="jobSearch" placeholder="Search by task title or skill...">
+          </div>
+        </div>
+        <div class="filter-field">
+          <label for="jobLocation">Location</label>
+          <div class="filter-input-wrap">
+            <span class="f-icon">📍</span>
+            <input id="jobLocation" placeholder="Enter city or area...">
+          </div>
+        </div>
+        <div class="filter-field">
+          <label for="jobCategory">Category</label>
+          <div class="filter-input-wrap">
+            <span class="f-icon">🏷️</span>
+            <select id="jobCategory">
+              <option value="">All Categories</option>
+            </select>
+          </div>
+        </div>
+        <div class="filter-field filter-btn-col">
+          <button class="btn btn-primary filter-button" id="jobFilterBtn">Filter Jobs</button>
+        </div>
+      </div>
+
+      <div class="result-heading">
+        <div>
+          <h2>Open Paid Tasks</h2>
+          <p>Apply directly with your experience and proposed turnaround time.</p>
+        </div>
+        <span class="result-count-badge" id="jobCount"></span>
+      </div>
+
+      <div class="job-list" id="allJobs"></div>
+
+      <div class="empty-state hidden" id="jobEmpty">
+        <div class="empty-icon">📋</div>
+        <h3>No jobs found matching your criteria</h3>
+        <p>Try searching another locality or category, or check back soon.</p>
+      </div>
+    </section>
+
+    <!-- ==================== COMMUNITY PAGE ==================== -->
+    <section class="page" id="community">
+      <div class="community-hero-card">
+        <div class="community-intro">
+          <span class="eyebrow">GOODWILL & SOLIDARITY</span>
+          <h1>Small Acts. Stronger Neighborhoods.</h1>
+          <p>
+            HelpNearby connects elderly residents, people needing errand assistance, and neighbors during emergencies with kind community volunteers. Zero charges, zero commissions.
+          </p>
+          <div class="community-hero-buttons">
+            <button class="btn btn-primary" id="communityPostBtn">❤️ Request Free Help</button>
+            <button class="btn btn-outline" data-page="workers">Find Paid Pros Instead</button>
+          </div>
+        </div>
+        <div class="community-hero-img-box">
+          <img 
+            src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=600&q=80" 
+            alt="Community Volunteer Support"
+            class="community-side-img"
+          >
+        </div>
+      </div>
+
+      <div class="community-info-grid">
+        <article class="comm-pillar">
+          <div class="comm-pillar-icon">🛒</div>
+          <h3>Everyday Errands</h3>
+          <p>Support an elderly neighbor with medicine runs, ration pickup, or simple everyday tasks.</p>
+        </article>
+        <article class="comm-pillar">
+          <div class="comm-pillar-icon">🌱</div>
+          <h3>Household & Garden</h3>
+          <p>Lend a hand moving heavy boxes, raking leaves, or helping someone organize their attic.</p>
+        </article>
+        <article class="comm-pillar">
+          <div class="comm-pillar-icon">🤝</div>
+          <h3>Companionship & Care</h3>
+          <p>Share a conversation, read a book, or accompany someone on a short neighborhood walk.</p>
+        </article>
+      </div>
+
+      <div class="result-heading">
+        <div>
+          <h2>Open Community Requests</h2>
+          <p>These neighbor requests are voluntary and 100% free.</p>
+        </div>
+        <span class="result-count-badge free-badge" id="communityCount"></span>
+      </div>
+
+      <div class="job-list" id="communityJobs"></div>
+
+      <div class="empty-state hidden" id="communityEmpty">
+        <div class="empty-icon">❤️</div>
+        <h3>No free community requests at the moment</h3>
+        <p>Be the first to post a request or check back soon.</p>
+        <button class="btn btn-primary" id="firstCommunityPostBtn">Post a Request</button>
+      </div>
+    </section>
+
+    <!-- ==================== BOOKINGS & ACTIVITY PAGE ==================== -->
+    <section class="page" id="bookings">
+      <div class="page-heading">
+        <span class="eyebrow">YOUR PERSONAL DASHBOARD</span>
+        <h1>My Bookings & Activity</h1>
+        <p>Track the tasks you posted, monitor incoming applications, and manage your pro profile.</p>
+      </div>
+
+      <div class="booking-tabs">
+        <button class="booking-tab active" data-booking="posted">
+          <span>Jobs I Posted</span>
+        </button>
+        <button class="booking-tab" data-booking="applied">
+          <span>My Applications</span>
+        </button>
+        <button class="booking-tab" data-booking="worker">
+          <span>My Pro Profile</span>
+        </button>
+      </div>
+
+      <div id="postedBookings" class="booking-content"></div>
+      <div id="appliedBookings" class="booking-content hidden"></div>
+      <div id="workerProfileContent" class="booking-content hidden"></div>
+    </section>
+
+  </main>
+
+  <!-- MODERN FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <div class="brand">
+          <svg width="34" height="34" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#0d9488" />
+                <stop offset="100%" stop-color="#10b981" />
+              </linearGradient>
+            </defs>
+            <rect width="48" height="48" rx="13" fill="url(#ftGrad)" />
+            <path d="M13 24L24 14L35 24" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M18 24V32C18 33.65 19.35 35 21 35H27C28.65 35 30 33.65 30 32V24" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="24" cy="27" r="3.2" fill="#f59e0b" />
+          </svg>
+          <div class="brand-text-block">
+            <span class="brand-name">Help<span class="brand-highlight">Nearby</span></span>
+          </div>
+        </div>
+        <p class="footer-tagline">
+          The hyperlocal neighborhood platform connecting verified local tradespeople, households, and community volunteers.
+        </p>
+        <div class="footer-badges">
+          <span class="f-badge">✓ 100% Verified Pros</span>
+          <span class="f-badge">🛡️ Direct Contact</span>
+          <span class="f-badge">🤝 Free Community Aid</span>
+        </div>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Explore Services</h4>
+        <ul>
+          <li><a href="#" data-page="workers" data-cat="Electrical">Electricians</a></li>
+          <li><a href="#" data-page="workers" data-cat="Plumbing">Plumbers</a></li>
+          <li><a href="#" data-page="workers" data-cat="Cleaning">Deep Cleaning</a></li>
+          <li><a href="#" data-page="workers" data-cat="Carpentry">Carpentry</a></li>
+          <li><a href="#" data-page="workers" data-cat="Gardening">Gardening</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#" data-page="home">Home</a></li>
+          <li><a href="#" data-page="workers">Find Workers</a></li>
+          <li><a href="#" data-page="jobs">Browse Jobs</a></li>
+          <li><a href="#" data-page="community">Community Help</a></li>
+          <li><a href="#" data-page="bookings">My Bookings</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Neighborhoods</h4>
+        <ul>
+          <li><span>Phagwara (Model Town, Hadiabad)</span></li>
+          <li><span>Jalandhar (Civil Lines, Model Town)</span></li>
+          <li><span>Ludhiana (BRS Nagar, Sarabha Nagar)</span></li>
+          <li><span>Chandigarh Tri-city</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 HelpNearby Network. Built for transparent, connected neighborhoods.</p>
+      <div class="footer-bottom-links">
+        <span>Privacy Policy</span> · <span>Terms of Service</span> · <span>Community Guidelines</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- JOB POST MODAL -->
+  <div class="modal-backdrop hidden" id="jobModal">
+    <div class="modal modal-md">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow">CREATE A LOCAL REQUEST</span>
+          <h2>Post a Task</h2>
+        </div>
+        <button class="close-modal" data-close="jobModal" aria-label="Close">×</button>
+      </div>
+
+      <form id="jobForm">
+        <div class="field">
+          <label for="posterName">Your Full Name *</label>
+          <input id="posterName" required placeholder="e.g. Ankit Mahajan">
+        </div>
+        <div class="field">
+          <label for="jobTitleInput">What do you need help with? *</label>
+          <input id="jobTitleInput" required placeholder="e.g. Master Electrician needed for switchboard repair">
+        </div>
+        <div class="field">
+          <label for="jobDescriptionInput">Detailed Task Description *</label>
+          <textarea id="jobDescriptionInput" required rows="3" placeholder="Explain the work required, tools needed, and timing preferences..."></textarea>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="postCategory">Category *</label>
+            <select id="postCategory" required></select>
+          </div>
+          <div class="field">
+            <label for="postLocation">Neighborhood / City *</label>
+            <input id="postLocation" required placeholder="e.g. Model Town, Phagwara">
+          </div>
+        </div>
+        <div class="field">
+          <label for="budgetType">Type of Request *</label>
+          <select id="budgetType" required>
+            <option value="paid">Paid Professional Work</option>
+            <option value="free">Free Community Volunteer Assistance</option>
+          </select>
+        </div>
+        <div class="field" id="budgetField">
+          <label for="budgetAmount">Your Budget (₹) *</label>
+          <input type="number" id="budgetAmount" min="0" placeholder="e.g. 500">
+          <small class="field-hint">Fair compensation helps you get faster responses from skilled pros.</small>
+        </div>
+        <button class="btn btn-primary btn-full btn-large" type="submit">Publish Request Now</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- WORKER PROFILE MODAL -->
+  <div class="modal-backdrop hidden" id="workerModal">
+    <div class="modal modal-lg">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow">JOIN AS INDEPENDENT PROFESSIONAL</span>
+          <h2>Create Your Pro Profile</h2>
+        </div>
+        <button class="close-modal" data-close="workerModal" aria-label="Close">×</button>
+      </div>
+
+      <form id="workerForm">
+        <div class="avatar-selection-section">
+          <label>Choose a Profile Photo</label>
+          <div class="avatar-preset-picker" id="avatarPicker">
+            <!-- Avatars populated via JS -->
+          </div>
+          <input type="hidden" id="workerAvatarInput">
+        </div>
+
+        <div class="field">
+          <label for="workerNameInput">Your Full Name *</label>
+          <input id="workerNameInput" required placeholder="e.g. Ramesh Verma">
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="workerSkillInput">Primary Trade / Skill *</label>
+            <select id="workerSkillInput" required></select>
+          </div>
+          <div class="field">
+            <label for="workerAreaInput">Primary Service Area *</label>
+            <input id="workerAreaInput" required placeholder="e.g. Phagwara, Jalandhar">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="workerExperienceInput">Experience Level</label>
+            <select id="workerExperienceInput">
+              <option>Beginner (Under 1 year)</option>
+              <option>1-2 years</option>
+              <option selected>3-5 years</option>
+              <option>5+ years Master Pro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="workerRateInput">Starting Visiting Rate (₹)</label>
+            <input type="number" id="workerRateInput" min="0" placeholder="e.g. 400">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="workerBioInput">About Your Work & Guarantee</label>
+          <textarea id="workerBioInput" rows="3" placeholder="Highlight your expertise, punctuality, past client work, and service warranty..."></textarea>
+        </div>
+
+        <button class="btn btn-primary btn-full btn-large" type="submit">Publish My Pro Profile</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- APPLICATION MODAL -->
+  <div class="modal-backdrop hidden" id="applyModal">
+    <div class="modal modal-md">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow">APPLY FOR THIS TASK</span>
+          <h2>Send Your Proposal</h2>
+        </div>
+        <button class="close-modal" data-close="applyModal" aria-label="Close">×</button>
+      </div>
+      <form id="applyForm">
+        <input type="hidden" id="applyJobId">
+        <div class="field">
+          <label for="applicantName">Your Full Name *</label>
+          <input id="applicantName" required placeholder="Enter your full name">
+        </div>
+        <div class="field">
+          <label for="applicantSkill">Your Relevant Skill / Experience *</label>
+          <input id="applicantSkill" required placeholder="e.g. Master Plumber with 5 yrs exp">
+        </div>
+        <div class="field">
+          <label for="applicantMessage">Why are you the right fit? *</label>
+          <textarea id="applicantMessage" rows="3" required placeholder="Share when you can arrive, equipment you have, and your estimated turnaround..."></textarea>
+        </div>
+        <button class="btn btn-primary btn-full btn-large" type="submit">Submit Proposal</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- RICH WORKER DETAIL MODAL -->
+  <div class="modal-backdrop hidden" id="detailModal">
+    <div class="modal modal-lg detail-modal-card">
+      <button class="close-modal detail-close-btn" data-close="detailModal" aria-label="Close">×</button>
+      <div id="workerDetail"></div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
